@@ -1,0 +1,50 @@
+<html lang='en'>
+
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>Tech Blog</title>
+    <link rel='stylesheet' href='/css/jass.css' />
+    <link rel='stylesheet' href='/css/style.css' />
+  </head>
+
+  <body>
+    <div class='flex-column justify-space-around'>
+      <header class='display-flex justify-space-between align-center p-2'>
+        <nav>
+          <!-- Conditionally render login or logout links -->
+          <a href='/'>Home</a>
+          |
+          <a href='/dashboard'>Dashboard</a>
+          |
+          {{#if logged_in}}
+
+            <span class='no-button' id='logout'>logout</span>
+          {{else}}
+            <a href='/login'>login</a>
+          {{/if}}
+          <br />
+          <br />
+          <h4 class='banner-box'>
+            BlogBuster
+          </h4>
+        </nav>
+
+      </header>
+
+      <main class='container container-fluid mt-5'>
+        <!-- Render the sub layout -->
+        {{{body}}}
+      </main>
+      <footer>
+
+      </footer>
+    </div>
+
+    <!-- Render script for logged in users only -->
+    {{#if logged_in}}
+      <script src='/js/logout.js'></script>
+    {{/if}}
+  </body>
+
+</html>
