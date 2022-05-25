@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS yorkies_db;
+CREATE DATABASE yorkies_db;
