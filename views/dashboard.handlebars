@@ -6,21 +6,14 @@
 
 <div class='row mt-4'>
   <div class='col-md-6'>
-    <h3>Create a New Blog Entry:</h3>
+    <h3>Create a new howl:</h3>
 
-    <form class='form new-project-form'>
-      <div class='form-group'>
-        <label for='project-name'>Blog Title:</label>
-        <input
-          class='form-input form-control'
-          type='text'
-          id='project-name'
-          name='project-name'
-        />
-      </div>
+   
+      
+       <form class='form new-project-form'>
 
       <div class='form-group'>
-        <label for='project-desc'>Blog body:</label>
+        <label for='project-desc'>content:</label>
         <textarea
           class='form-input form-control' rows="6"
           id='project-desc'
@@ -33,22 +26,22 @@
     </form>
   </div>
 
-  {{#if blogs.length}}
+  {{#if tweets.length}}
     <div class='col-md-6 project-list'>
       <h3>Previous Entries:</h3>
 
-      {{#each blogs as |blog|}}
+      {{#each tweets as |tweet|}}
         <div class='container mb-2'>
           <div class="row">
            <div class="col">
 
 
-           <a href='/blog/{{blog.id}}'><h4 class="blog-title">{{blog.title}}</h4> </a>
+           <a href='/tweet/{{tweet.id}}'><h4 class="blog-title">{{tweet.content}}</h4> </a>
             
           <div class="row">
        
                    <div class='col-2 edit-button'>
-                        <a href='/edit/{{blog.id}}'>
+                        <a href='/edit/{{tweet.id}}'>
                             <button class='btn btn-sm btn-danger' >Edit</button>
                         </a>
                     </div>
@@ -56,7 +49,7 @@
           <div class='col-2'>
             <button 
               class='btn btn-sm btn-danger'
-              data-id='{{blog.id}}'
+              data-id='{{tweet.id}}'
             >DELETE</button>
           </div>
           </div>
