@@ -19,11 +19,11 @@ Comment.init(
         key: 'id',
       },
     },
-    blog_id: {
+    tweet_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'blog',
+        model: 'tweet',
         key: 'id',
       },
     },

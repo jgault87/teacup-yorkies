@@ -20,6 +20,12 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+
+    avatar_file: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -43,7 +49,10 @@ User.init(
         return newUserData;
       },
       beforeUpdate: async (updatedUserData) => {
-        updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+        updatedUserData.password = await bcrypt.hash(
+          updatedUserData.password,
+          10
+        );
         return updatedUserData;
       },
     },

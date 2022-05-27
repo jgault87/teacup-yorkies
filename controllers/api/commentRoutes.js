@@ -16,9 +16,11 @@ router.get('/', async (req, res) => {
 router.post('/', withAuth, async (req, res) => {
   try {
     const commentData = await Comment.create({
-      comment_text: req.body.comment,
-      blog_id: req.body.post_id,
+      
       user_id: req.session.user_id,
+      tweet_id: req.body.tweet_id,
+      comment_text: req.body.comment_text,
+      
     });
 
     res.status(200).json(commentData);
