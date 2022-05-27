@@ -3,21 +3,21 @@ const newCommentHandler = async (event) => {
 
 
   if (event.target.hasAttribute('data-id')) {
-    const blog_id = event.target.getAttribute('data-id');
+    const tweet_id = event.target.getAttribute('data-id');
     const comment_text = document.querySelector('#comment-content').value.trim();
-    console.log(comment_text, blog_id);
+    console.log(comment_text, tweet_id);
 
-    if (blog_id && comment_text) {
-      const response = await fetch(`/api/comments`, {
+    if (tweet_id && comment_text) {
+      const response = await fetch(`/api/tweets`, {
         method: 'POST',
-        body: JSON.stringify({ blog_id, comment_text }),
+        body: JSON.stringify({ tweet_id, comment_text }),
         headers: {
           'Content-Type': 'application/json',
         },
       });
 
       if (response.ok) {
-        document.location.replace(`/blog/${blog_id}`);
+        document.location.replace(`/tweet/${tweet_id}`);
       } else {
         alert('Failed to create comment');
       }
