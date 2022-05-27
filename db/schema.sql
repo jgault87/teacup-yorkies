@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS yorkies_db;
-CREATE DATABASE yorkies_db;
+DROP DATABASE IF EXISTS teacup_db;
+CREATE DATABASE teacup_db;

@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Blog extends Model {}
+class Tweet extends Model {}
 
-Blog.init(
+Tweet.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,12 +11,9 @@ Blog.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    title: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+   
     content: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
     },
 
     date_created: {
@@ -38,8 +35,8 @@ Blog.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'blog',
+    modelName: 'tweet',
   }
 );
 
-module.exports = Blog;
+module.exports = Tweet;
