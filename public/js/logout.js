@@ -14,3 +14,16 @@ const logout = async () => {
 document.querySelector('#logout').addEventListener('click', logout);
 
 
+const catFact = () => {
+  fetch('https://meowfacts.herokuapp.com')
+    .then(data => {
+      return data.json();
+    })
+    .then(post => {
+      //write to populate data into div
+      
+      console.log(post.data.toString());
+    })
+};
+
+catFact(); 
