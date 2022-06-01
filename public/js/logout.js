@@ -22,7 +22,7 @@ const catFact = () => {
     .then(post => {
       //write to populate data into div
       
-      console.log(post.data.toString());
+      document.getElementById("catFact").innerHTML = post.data.toString();
     })
 };
 
