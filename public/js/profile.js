@@ -41,8 +41,8 @@ const delButtonHandler = async (event) => {
 
 
 document
-  .querySelector('.new-project-form')
-  .addEventListener('submit', newFormHandler);
+  .getElementById('howlBtn')
+  .addEventListener('click', newFormHandler);
 
 document
   .querySelector('.project-list')
