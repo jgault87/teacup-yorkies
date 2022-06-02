@@ -21,9 +21,7 @@ This is a social media app using full-stack technologies. It has a Twiiter-like 
 You will need to clone this application for installation
 
 ## Usage
-![NotedGIF](assets/KeepNoted.gif) 
 
-[Deployed Link](https://morning-stream-54406.herokuapp.com/)
 
 ## Contributing
 To contribute to this project please contact me, information is below.
