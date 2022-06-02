@@ -1,19 +1,68 @@
-
-<div class="container-sm">
+<div class='container-sm'>
   <h4>Login:</h4>
-<form class="login-form">
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="email-login" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="password-login" placeholder="Password">
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-<a href='/signup'><button type="button" class="btn btn-secondary">signup instead?</button></a>
+  <!-- Section: Design Block -->
+  <section class='text-center text-lg-start'>
+    <style>
+      .rounded-t-5 { border-top-left-radius: 0.5rem; border-top-right-radius:
+      0.5rem; } @media (min-width: 992px) { .rounded-tr-lg-0 {
+      border-top-right-radius: 0; } .rounded-bl-lg-5 {
+      border-bottom-left-radius: 0.5rem; } }
+    </style>
+    <div class='card mb-3 bg-dark'>
+      <div class='row g-0 d-flex align-items-center text-white'>
+        <div class='col-lg-4 d-none d-lg-flex'>
+          <img
+            src='images/scooby-ice-cream.jpg'
+            alt='Scooby Doo with an ice cream cone'
+            class='w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5'
+          />
+        </div>
+        <div class='col-lg-8'>
+          <div class='card-body py-5 px-md-5'>
+
+            <form class='login-form'>
+              <!-- Email input -->
+              <div class='form-outline mb-4'>
+                <input
+                  type='email'
+                  id='email-login'
+                  class='form-control'
+                  aria-describedby='emailHelp'
+                  placeholder='Enter email'
+                />
+                <label class='form-label' for='exampleInputEmail1'>Email address</label>
+              </div>
+
+              <!-- Password input -->
+              <div class='form-outline mb-4'>
+                <input
+                  type='password'
+                  id='password-login'
+                  class='form-control'
+                  placeholder='Enter Password'
+                />
+                <label
+                  class='form-label'
+                  for='exampleInputPassword1'
+                >Password</label>
+              </div>
+
+              <!-- Submit button -->
+              <button type='submit' class='btn btn-primary btn-block mb-4'>Sign
+                in</button>
+              <a href='/signup'><button
+                  type='button'
+                  class='btn btn-secondary mb-4'
+                >Sign up
+                </button></a>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
 
 <script src='/js/login.js'></script>
