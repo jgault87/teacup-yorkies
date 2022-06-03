@@ -27,3 +27,18 @@ const catFact = () => {
 };
 
 catFact(); 
+
+
+
+const dogFact = () => {
+  fetch('https://random.dog/woof.json')
+    .then(data => data.json())
+    .then(post => {
+      //write to populate data into div
+      
+      document.getElementById("dogFact").innerHTML = `<img src="${post.url}" alt="random dog image" width="300" height="300" >`;
+    })
+  };
+
+dogFact(); 
+
