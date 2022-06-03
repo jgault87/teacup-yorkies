@@ -1,21 +1,90 @@
-  <h2>Sign-up</h2>
+<section class='vh-100'>
+  <div class='container h-100'>
+    <div class='row d-flex justify-content-center align-items-center h-100'>
+      <div class='col-lg-12 col-xl-11'>
+        <div class='card bg-dark text-white' style='border-radius: 25px;'>
+          <div class='card-body p-md-5'>
+            <div class='row justify-content-center'>
+              <div class='col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1'>
 
-  <form class='form signup-form'>
-    <div class='form-group'>
-      <label for='inputusername'>Username:</label>
-      <input class='form-control' type='username' id='name-signup' placeholder="Enter desired username" />
+                <p class='text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4'>Sign up</p>
+
+                <form class='signup-form mx-1 mx-md-4'>
+
+                  <div class='d-flex flex-row align-items-center mb-4'>
+                    <i class='fas fa-user fa-lg me-3 fa-fw'></i>
+                    <div class='form-outline flex-fill mb-0'>
+                      <input
+                        type='username'
+                        id='name-signup'
+                        class='form-control'
+                        placeholder='Enter desired username'
+                      />
+                      <label
+                        class='form-label'
+                        for='inputusername'
+                      >Username</label>
+                    </div>
+                  </div>
+
+                  <div class='d-flex flex-row align-items-center mb-4'>
+                    <i class='fas fa-envelope fa-lg me-3 fa-fw'></i>
+                    <div class='form-outline flex-fill mb-0'>
+                      <input
+                        type='Email'
+                        id='email-signup'
+                        class='form-control'
+                        placeholder='Enter email'
+                      />
+                      <label class='form-label' for='email-signup'>Your Email</label>
+                    </div>
+                  </div>
+
+                  <div class='d-flex flex-row align-items-center mb-4'>
+                    <i class='fas fa-lock fa-lg me-3 fa-fw'></i>
+                    <div class='form-outline flex-fill mb-0'>
+                      <input
+                        type='password'
+                        id='password-signup'
+                        class='form-control'
+                        placeholder='Enter Password'
+                      />
+                      <label
+                        class='form-label'
+                        for='password-signup'
+                      >Password</label>
+                    </div>
+                  </div>
+
+                  <div
+                    class='d-flex justify-content-center mx-4 mb-3 mb-lg-4 form-group'
+                  >
+                    <button
+                      type='submit'
+                      class='btn btn-primary btn-lg'
+                    >Register</button>
+                  </div>
+
+                </form>
+
+              </div>
+              <div
+                class='col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2'
+              >
+
+                <img
+                  src='images/Danette.jpg'
+                  class='img-fluid'
+                  alt='Sample image'
+                />
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class='form-group'>
-      <label for='email-signup'>Email:    </label>
-      <input class='form-control' type='Email' id='email-signup' placeholder="Enter email">
-    </div>
-    <div class='form-group'>
-      <label for='password-signup'>Password:</label>
-      <input class='form-control' type='password' id='password-signup' placeholder="Enter Password">
-    </div>
-    <div class='form-group'>
-      <button class='btn btn-primary' type='submit'>Sign-up</button>
-    </div>
-  </form>
+  </div>
+</section>
 
 <script src='/js/signup.js'></script>
