@@ -1,3 +1,36 @@
+const avatars = [
+  'cat1.jpg',
+  'cat2.jpg',
+  'cat3.jpg',
+  'cat4.jpg',
+  'cat5.jpg',
+  'cat6.jpg',
+  'cat7.jpg',
+  'dog1.jpg',
+  'dog2.jpg',
+  'dog3.jpg',
+  'dog4.jpg',
+  'dog5.jpg',
+  'dog6.jpg',
+];
+
+avatars.forEach((src) => {
+  const img = document.createElement('img');
+  img.src = `images/${src}`;
+  img.title = src;
+  img.width = 150;
+  img.height = 150;
+  img.id = src;
+  window['card-deck'].appendChild(img);
+  img.addEventListener('click', () => {
+    console.log(img.id);
+
+  
+
+  });
+});
+
+
 const newFormHandler = async (event) => {
   event.preventDefault();
 
@@ -20,10 +53,7 @@ const newFormHandler = async (event) => {
   }
 };
 
-
-
 const delButtonHandler = async (event) => {
-  
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
     const response = await fetch(`/api/tweets/${id}`, {
@@ -38,30 +68,28 @@ const delButtonHandler = async (event) => {
   }
 };
 
-
-document
-  .getElementById('howlBtn')
-  .addEventListener('click', newFormHandler);
+document.getElementById('howlBtn').addEventListener('click', newFormHandler);
 
 document
   .querySelector('.project-list')
   .addEventListener('click', delButtonHandler);
 
 
+
+
+
+// const avatarHandler = async () => {
+
   
+//   if (event.target.hasAttribute('id')){
+//   const avatar_file = event.target.getAttribute('id');
+//   console.log(avatar_file);
 
-  const avatars = ["cat1.jpg", "cat2.jpg", "cat3.jpg", "cat4.jpg", "cat5.jpg", "dog1.jpg", "dog2.jpg", "dog3.jpg", "dog4.jpg", "dog5.jpg"];
-
- avatars.forEach(src => {
-   const img = document.createElement('img');
-   img.src = `images/${src}`;
-   img.title = src;
-   img.width = 150;
-   img.height = 150;
-   window["card-deck"].appendChild(img);
-
-   console.log(img.title);
+//   if (avatar_file) {
+//    // const response = await fetch(`/api/`)
 
 
+//   }
 
- });
+//   }
+// }
