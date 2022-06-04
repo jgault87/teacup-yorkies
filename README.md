@@ -1,4 +1,4 @@
-# teacup-yorkies
+# Teacup-Yorkies
 
 ## Table of Contents
 - [Description](#description)
@@ -12,7 +12,7 @@
 - [Deployed](#deployed)
 
 ## Description
-This is a social media app using full-stack technologies. It has a Twiiter-like interface allowing the use to post about themselves and/or their pets. It unique to the furry loving population.
+This is a social media app using full-stack technologies. It has a Twiiter-like interface allowing the use to post about themselves and/or their pets. It is unique to the furry loving population.
 
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -21,24 +21,20 @@ This is a social media app using full-stack technologies. It has a Twiiter-like 
 You will need to clone this application for installation
 
 ## Usage
-![NotedGIF](assets/KeepNoted.gif) 
 
-[Deployed Link](https://morning-stream-54406.herokuapp.com/)
 
 ## Contributing
-To contribute to this project please contact me, information is below.
+To contribute to this project please contact us, information is below.
 
 ## Tests
-To test
+N/A
 
 ## Questions
 Here are our names and contact info. If you have questions, please reach out!
 - :pencil2: JJ Gualt
-- :octocat: 
-- :email: 
+- :octocat: [jgault87](https://github.com/jgault87)
 - :pencil2: Peter 
-- :octocat: 
-- :email: 
+- :octocat: [Boopdid](https://github.com/Boopdid)
 - :pencil2: Anita Chavez 
 - :octocat: [Neeta525](https://github.com/Neeta525)
 - :email: starry-days@hotmail.com
@@ -51,4 +47,4 @@ Here are our names and contact info. If you have questions, please reach out!
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 
 ## Deployed
-![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)
+![Heroku]
