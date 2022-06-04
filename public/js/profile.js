@@ -1,7 +1,6 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  // const title = document.querySelector('#project-name').value.trim();
   const content = document.querySelector('#project-desc').value.trim();
 
   if (content) {
@@ -51,4 +50,18 @@ document
 
   
 
-  
+  const avatars = ["cat1.jpg", "cat2.jpg", "cat3.jpg", "cat4.jpg", "cat5.jpg", "dog1.jpg", "dog2.jpg", "dog3.jpg", "dog4.jpg", "dog5.jpg"];
+
+ avatars.forEach(src => {
+   const img = document.createElement('img');
+   img.src = `images/${src}`;
+   img.title = src;
+   img.width = 150;
+   img.height = 150;
+   window["card-deck"].appendChild(img);
+
+   console.log(img.title);
+
+
+
+ });
