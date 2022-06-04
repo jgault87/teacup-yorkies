@@ -14,27 +14,55 @@
   <body>
     <div class='flex-column justify-space-around'>
       <header class='display-flex justify-space-between align-center p-2'>
-        <nav>
-          <!-- Conditionally render login or logout links -->
-          <a href='/'>Home</a>
-          |
-          <a href='/dashboard'>Dashboard</a>
-          |
-          {{#if logged_in}}
 
-            <a href='/dashboard' id='logout'>logout</a>
-          {{else}}
-            <a href='/login'>login</a>
-          {{/if}}
 
-          <div class='card' style='width: 18rem;'>
-            <ul class='list-group list-group-flush'>
-              <li id='catFact' class='list-group-item'></li>
-              <li id='dogFact' class='list-group-item'>Random Dog Pic:</li>
-              <li class='list-group-item'></li>
-            </ul>
+        <nav class='navbar navbar-expand-lg navbar-light bg-dark'>
+          <div class='container-fluid'>
+            <a class='navbar-brand text-white' href='#'>Howl</a>
+            <button
+              class='navbar-toggle'
+              type='button'
+              data-mdb-toggle='collapse'
+              data-mdb-target='#navbarNavAltMarkup'
+              aria-controls='navbarNavAltMarkup'
+              aria-expanded='false'
+              aria-label='Toggle navigation'
+            >
+              <i class='fas fa-bars'></i>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNavAltMarkup'>
+              <div class='navbar-nav'>
+                <a
+                  class='nav-link active text-white'
+                  aria-current='page'
+                  href='/'
+                >Home</a>
+                <a
+                  class='nav-link active text-white'
+                  href='/dashboard'
+                >Dashboard</a>
+
+                {{#if logged_in}}
+
+                  <a
+                    class='nav-link active text-white'
+                    href='/dashboard'
+                    id='logout'
+                  >Logout</a>
+                {{else}}
+                  <a class='nav-link active text-white' href='/login'>Login</a>
+                {{/if}}
+                <div class='card' style='width: 18rem;'>
+                  <ul class='list-group list-group-flush'>
+                    <li id='catFact' class='list-group-item'></li>
+                    <li id='dogFact' class='list-group-item'></li>
+                    <li class='list-group-item'></li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
           </div>
-
         </nav>
 
       </header>
