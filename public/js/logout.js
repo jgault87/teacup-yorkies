@@ -36,9 +36,10 @@ const dogPic = () => {
     .then(post => {
       //write to populate data into div
       
-      document.getElementById("dogFact").innerHTML = `Random dog pic: <img src="${post.url}" alt="random dog image" width="250" height="250" >`;
+      document.getElementById("dogFact").innerHTML = `Random dog pic: <img src="${post.url}" class="border border-info rounded-circle" alt="random dog image" width="250" height="250" >`;
     })
   };
 
 dogPic(); 
+
 

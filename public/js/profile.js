@@ -16,6 +16,9 @@ const avatars = [
 
 avatars.forEach((src) => {
   const img = document.createElement('img');
+  img.classList.add('rounded-circle');
+  img.classList.add('border');
+  img.classList.add('border-info');
   img.src = `images/${src}`;
   img.title = src;
   img.width = 150;
