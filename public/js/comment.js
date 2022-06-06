@@ -8,7 +8,7 @@ const newCommentHandler = async (event) => {
     console.log(comment_text, tweet_id);
 
     if (tweet_id && comment_text) {
-      const response = await fetch(`/api/tweets`, {
+      const response = await fetch(`/api/comments`, {
         method: 'POST',
         body: JSON.stringify({ tweet_id, comment_text }),
         headers: {
