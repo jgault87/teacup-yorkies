@@ -4,6 +4,7 @@ const { User, Tweet, Comment } = require('../models');
 const userData = require('./userData.json');
 const tweetData = require('./tweetData.json');
 const commentData = require('./commentData.json');
+const pitbullOrPotatoData = require('./pitpullOrPotatoData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
