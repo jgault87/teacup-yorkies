@@ -1,25 +1,30 @@
 [{
     "name": "Murphy the Cat",
+    "avatar_file": "cat1.jpg",
     "email": "murphy@gmail.com",
     "password": "password12345"
   },
   {
     "name": "Jim the Dog",
+    "avatar_file": "dog1.jpg",
     "email": "jimhalpert@gmail.com",
     "password": "password12345"
   },
   {
     "name": "Dwight the Mouse",
+    "avatar_file": "dog2.jpg",
     "email": "dwightschrute@gmail.com",
     "password": "password12345"
   },
   {
     "name": "Godzilla",
+    "avatar_file": "dog5.jpg",
     "email": "japan@gmail.com",
     "password": "password12345"
   },
   {
     "name": "Paul the Hampster",
+    "avatar_file": "cat5.jpg",
     "email": "dune@gmail.com",
     "password": "password12345"
   }

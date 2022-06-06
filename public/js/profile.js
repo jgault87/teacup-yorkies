@@ -30,6 +30,31 @@ avatars.forEach((src) => {
   });
 });
 
+const avatarHandler = async () => {
+  if (event.target.hasAttribute('id')) {
+    const avatar_file = event.target.getAttribute('id');
+    console.log(avatar_file);
+
+    if (avatar_file) {
+      
+      const response = await fetch(`/api/users/:id`, {
+        method: 'PUT',
+        body: JSON.stringify({ avatar_file }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (response.ok) {
+        window.alert('Avatar updated successfully!');
+        document.location.replace('/dashboard');
+    } else {
+        alert('Failed to update post');
+    }
+    }
+  }
+};
+
 const newFormHandler = async (event) => {
   event.preventDefault();
 
@@ -73,22 +98,4 @@ document
   .querySelector('.project-list')
   .addEventListener('click', delButtonHandler);
 
-const avatarHandler = async () => {
-  if (event.target.hasAttribute('id')) {
-    const avatar_file = event.target.getAttribute('id');
-    console.log(avatar_file);
-    console.log(userData.id);
 
-    if (avatar_file) {
-      // const response = await fetch(`/api/`)
-
-      // const response = await fetch(`/api/users/${tweet_id}`, {
-      //   method: 'PUT',
-      //   body: JSON.stringify({ content }),
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      // });
-    }
-  }
-};

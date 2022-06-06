@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['name', 'avatar_file'],
         },
         {
           model: Comment,
@@ -23,7 +23,7 @@ router.get('/', async (req, res) => {
           ],
           include: {
             model: User,
-            attributes: ['name'],
+            attributes: ['name', 'avatar_file'],
           },
         },
       ],
