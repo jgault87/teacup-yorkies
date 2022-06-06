@@ -26,13 +26,9 @@ avatars.forEach((src) => {
   img.id = src;
   window['card-deck'].appendChild(img);
   img.addEventListener('click', () => {
-    console.log(img.id);
-
-  
-
+    avatarHandler();
   });
 });
-
 
 const newFormHandler = async (event) => {
   event.preventDefault();
@@ -77,22 +73,22 @@ document
   .querySelector('.project-list')
   .addEventListener('click', delButtonHandler);
 
+const avatarHandler = async () => {
+  if (event.target.hasAttribute('id')) {
+    const avatar_file = event.target.getAttribute('id');
+    console.log(avatar_file);
+    console.log(userData.id);
 
+    if (avatar_file) {
+      // const response = await fetch(`/api/`)
 
-
-
-// const avatarHandler = async () => {
-
-  
-//   if (event.target.hasAttribute('id')){
-//   const avatar_file = event.target.getAttribute('id');
-//   console.log(avatar_file);
-
-//   if (avatar_file) {
-//    // const response = await fetch(`/api/`)
-
-
-//   }
-
-//   }
-// }
+      // const response = await fetch(`/api/users/${tweet_id}`, {
+      //   method: 'PUT',
+      //   body: JSON.stringify({ content }),
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      // });
+    }
+  }
+};
