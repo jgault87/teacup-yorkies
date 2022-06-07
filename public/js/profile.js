@@ -4,8 +4,10 @@ const avatars = [
   'cat3.jpg',
   'cat4.jpg',
   'cat5.jpg',
-  'cat6.jpg',
   'cat7.jpg',
+  'cat8.jpg',
+  'cat9.jpg',
+  'cat10.jpg',
   'dog1.jpg',
   'dog2.jpg',
   'dog3.jpg',
@@ -86,7 +88,7 @@ const delButtonHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/dashboard');
     } else {
-      alert('Failed to delete project');
+      alert('Failed to delete howl');
     }
   }
 };
