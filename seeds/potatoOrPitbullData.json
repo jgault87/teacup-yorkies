@@ -1,0 +1,14 @@
+[
+  { "image": "pitbull1.jpg", "type": "pitbull" },
+  { "image": "pitbull2.jpg", "type": "pitbull" },
+  { "image": "pitbull3.jpg", "type": "pitbull" },
+  { "image": "pitbull4.jpg", "type": "pitbull" },
+  { "image": "pitbull5.jpg", "type": "pitbull" },
+  { "image": "pitbull6.jpg", "type": "pitbull" },
+  { "image": "potato1.jpg", "type": "potato" },
+  { "image": "potato2.jpg", "type": "potato" },
+  { "image": "potato3.jpg", "type": "potato" },
+  { "image": "potato4.jpg", "type": "potato" },
+  { "image": "potato5.jpg", "type": "potato" },
+  { "image": "potato6.jpg", "type": "potato" }
+]

@@ -36,7 +36,6 @@ const avatarHandler = async () => {
     console.log(avatar_file);
 
     if (avatar_file) {
-      
       const response = await fetch(`/api/users/:id`, {
         method: 'PUT',
         body: JSON.stringify({ avatar_file }),
@@ -48,9 +47,9 @@ const avatarHandler = async () => {
       if (response.ok) {
         window.alert('Avatar updated successfully!');
         document.location.replace('/dashboard');
-    } else {
+      } else {
         alert('Failed to update post');
-    }
+      }
     }
   }
 };
@@ -97,5 +96,3 @@ document.getElementById('howlBtn').addEventListener('click', newFormHandler);
 document
   .querySelector('.project-list')
   .addEventListener('click', delButtonHandler);
-
-

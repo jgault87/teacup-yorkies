@@ -13,7 +13,27 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const userData = await User.create(req.body);
+    let availableAvatars = [
+      'cat1.jpg',
+      'cat2.jpg',
+      'cat3.jpg',
+      'cat4.jpg',
+      'cat5.jpg',
+      'cat6.jpg',
+      'cat7.jpg',
+      'dog1.jpg',
+      'dog2.jpg',
+      'dog3.jpg',
+      'dog4.jpg',
+      'dog5.jpg',
+      'dog6.jpg',
+    ];
+    let randomIndex = Math.floor(Math.random() * availableAvatars.length);
+
+    let body = req.body;
+    body.avatar_file = availableAvatars[randomIndex];
+
+    const userData = await User.create(body);
 
     req.session.save(() => {
       req.session.user_id = userData.id;
@@ -90,6 +110,5 @@ router.put('/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
 
 module.exports = router;
