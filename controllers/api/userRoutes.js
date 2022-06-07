@@ -88,7 +88,7 @@ router.post('/logout', (req, res) => {
 });
 
 router.put('/:id', async (req, res) => {
-  // sending the data to the Model so that one blog can be updated with new data in the database.
+  // sending the data to the Model so that one tweet can be updated with new data in the database.
   try {
     const userData = await User.update(
       {
