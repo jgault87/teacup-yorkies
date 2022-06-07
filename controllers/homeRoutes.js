@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Tweet, User, Comment } = require('../models');
+const { Tweet, User, Comment, PotatoOrPitbull } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -160,6 +160,40 @@ router.get('/edit/:id', withAuth, async (req, res) => {
     });
   } catch (error) {
     res.status(500).json(error);
+  }
+});
+
+function randomlySort(array) {
+  for (var i = array.length - 1; i > 0; i--) {
+    var newIndex = Math.floor(Math.random() * (i + 1));
+    var temp = array[i];
+    array[i] = array[newIndex];
+    array[newIndex] = temp;
+  }
+  return array;
+}
+
+router.get('/PotatoOrPitbull', async (req, res) => {
+  try {
+    // Get all blogs and JOIN with user data sorting by DESC ID which will sort newest toward top
+    const potatoOrPitbullsData = await PotatoOrPitbull.findAll({
+      order: [['id', 'DESC']],
+    });
+
+    // Serialize data so the template can read it
+    const potatoesOrPitbulls = potatoOrPitbullsData.map((potatoOrPitbull) =>
+      potatoOrPitbull.get({ plain: true })
+    );
+
+    console.log('HELLO: ', potatoesOrPitbulls);
+
+    // Pass serialized data and session flag into template
+    res.render('potatoorpitbull', {
+      potatoesOrPitbulls: randomlySort(potatoesOrPitbulls),
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 
