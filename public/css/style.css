@@ -59,6 +59,15 @@ body {
   background-color: #f7f7fa;
 }
 
+.card .card-user-profile .profile-page-center .media-feed-control button {
+  opacity: 0.5;
+  color: #7e7e7e;
+  -webkit-transition: opacity 0.225s ease-in-out;
+  -moz-transition: opacity 0.225s ease-in-out;
+  -o-transition: opacity 0.225s ease-in-out;
+  transition: opacity 0.225s ease-in-out;
+}
+
 .card .card-user-profile .profile-page-center .media-feed-control a {
   opacity: 0.5;
   color: #7e7e7e;
@@ -78,6 +87,11 @@ body {
 
 .card .card-user-profile .profile-page-center .media-feed-control a:focus,
 .card .card-user-profile .profile-page-center .media-feed-control a:hover {
+  opacity: 1;
+}
+
+.card .card-user-profile .profile-page-center .media-feed-control button:focus,
+.card .card-user-profile .profile-page-center .media-feed-control button:hover {
   opacity: 1;
 }
 

@@ -144,9 +144,9 @@
                                 </div>
                                 {{tweet.content}}
                                 <div class="media-feed-control">
-                                    <a style="color: #000000;" href="#">
+                                    <button style="color: #000000;" class="like btn btn-link" id={{tweet.id}}-{{tweet.likes}}>
                                         <i class="batch-icon batch-icon-heart-full"></i>🐾 Like ({{tweet.likes}})
-                                    </a>
+                                    </button>
                                     <a style="color: #000000;" href="/tweet/{{tweet.id}}">
                                         <i  class="batch-icon batch-icon-speech-bubble-left-tip"></i>💬 Comment ({{tweet.comments.length}})
                                     </a>
@@ -189,4 +189,6 @@
 
 
 
+
+<script src='/js/likes.js'></script>
 <script src='/js/profile.js'></script>

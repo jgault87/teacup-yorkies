@@ -32,7 +32,7 @@ router.put('/:id', async (req, res) => {
   try {
     const tweetData = await Tweet.update(
       {
-        content: req.body.content,
+        ...req.body,
       },
       {
         where: {
