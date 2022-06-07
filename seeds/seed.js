@@ -18,6 +18,7 @@ const seedDatabase = async () => {
     await Tweet.create({
       ...tweet,
       user_id: users[Math.floor(Math.random() * users.length)].id,
+      likes: Math.floor(Math.random() * 250),
     });
   }
 

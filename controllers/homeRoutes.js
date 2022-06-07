@@ -103,10 +103,13 @@ router.get('/dashboard', withAuth, async (req, res) => {
       ],
     });
 
-    // Serialize data so the template can read it
-    const tweets = allTweetData.map((tweet) => tweet.get({ plain: true }));
-
     const user = userData.get({ plain: true });
+    // Serialize data so the template can read it
+    const tweets = allTweetData.map((tweet) => {
+      let convertedTweet = tweet.get({ plain: true });
+      convertedTweet.currentUsersTweet = user.name === convertedTweet.user.name;
+      return convertedTweet;
+    });
 
     res.render('dashboard', {
       user,

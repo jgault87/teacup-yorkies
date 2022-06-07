@@ -122,39 +122,6 @@
         <div class="media-feed-control clearfix"></div>
         <button type="click" class="btn btn-primary btn-sm comment-reply float-right waves-effect waves-light" id="howlBtn">HOWL</button>
 
-
-  {{#if user.tweets.length}}
-    <div class='col-md-6 project-list'>
-      <h3>Previous Entries:</h3>
-
-      {{#each user.tweets as |tweet|}}
-        <div class='container mb-2'>
-          <div class="row">
-          <div class="col">
-
-
-          <a href='/tweet/{{tweet.id}}'><h4 class="blog-title">{{tweet.content}}</h4> </a>
-            
-          <div class="d-flex flex-row">
-                  <div class='p-2 edit-button'>
-                        <a href='/edit/{{tweet.id}}'>
-                            <button class='btn btn-sm btn-danger' >Edit</button>
-                        </a>
-                    </div>
-
-          <div class='p-2'>
-            <button 
-              class='btn btn-sm btn-danger'
-              data-id='{{tweet.id}}'
-            >Scoop-It</button>
-          </div>
-          </div>
-          </div>
-        </div>
-        </div>
-      {{/each}}
-    
-  {{/if}}
                                     <a href="#" data-toggle="tooltip" title="" data-original-title="Add Picture">
                                         <i class="batch-icon batch-icon-image"></i>
                                     </a>
@@ -169,23 +136,41 @@
                                 <img src="images/{{user.avatar_file}}" width="44" height="44">
                             </div>
 
+                            
+
                             <div class="media-body">
                                 <div class="media-title mt-0 mb-1">
                                     <a href="#">{{tweet.user.name}}</a> <small>{{format_date tweet.date_created}}</small>
                                 </div>
                                 {{tweet.content}}
                                 <div class="media-feed-control">
-                                    <a href="#">
-                                        <i class="batch-icon batch-icon-heart-full"></i>🐾 Like ({{random_number 1 50}})
+                                    <button style="color: #000000;" class="like btn btn-link" id={{tweet.id}}-{{tweet.likes}}>
+                                        <i class="batch-icon batch-icon-heart-full"></i>🐾 Like ({{tweet.likes}})
+                                    </button>
+                                    <a style="color: #000000;" href="/tweet/{{tweet.id}}">
+                                        <i  class="batch-icon batch-icon-speech-bubble-left-tip"></i>💬 Comment ({{tweet.comments.length}})
                                     </a>
-                                    <a href="#">
-                                        <i class="batch-icon batch-icon-speech-bubble-left-tip"></i>💬 Comment ({{random_number 1 10}})
-                                    </a>
-                                    <a href="#">
+                                    <a style="color: #000000;" href="#">
                                         <i class="batch-icon batch-icon-flag"></i>💩 Report
                                     </a>
                                 </div>
                             </div>
+                            {{#if tweet.currentUsersTweet}}
+                                <div class="d-flex flex-row justify-content-end">
+                                <div class='p-2 edit-button'>
+                                    <a href='/edit/{{tweet.id}}'>
+                                        <button class='btn btn-sm btn-danger' >Edit</button>
+                                    </a>
+                                </div>
+
+                                <div class='p-2'>
+                                    <button 
+                                    class='btn btn-sm btn-danger'
+                                    data-id='{{tweet.id}}'
+                                    >Scoop-It</button>
+                                </div>
+                            </div>
+                            {{/if}}
                         </li>
                         {{/each}}
                         </ul>
@@ -204,4 +189,6 @@
 
 
 
+
+<script src='/js/likes.js'></script>
 <script src='/js/profile.js'></script>
