@@ -3,7 +3,9 @@ module.exports = {
     // Format date as MM/DD/YYYY
     return date.toLocaleDateString();
   },
-  
+  random_number: (min, max) => {
+    return Math.floor(Math.random() * (max - min) + min);
+  },
   format_time: (date) => {
     return date.toLocaleTimeString();
   },
