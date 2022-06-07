@@ -16,6 +16,7 @@ const avatars = [
   'dog6.jpg',
 ];
 
+//loop through images array and add styling via bootstrap classes then add each image onto page with a click event that passes to avatarHandler
 avatars.forEach((src) => {
   const img = document.createElement('img');
   img.classList.add('rounded-circle');
@@ -32,6 +33,7 @@ avatars.forEach((src) => {
   });
 });
 
+//put request to pass clicked image value to logged in user class on the back end.
 const avatarHandler = async () => {
   if (event.target.hasAttribute('id')) {
     const avatar_file = event.target.getAttribute('id');
@@ -56,6 +58,7 @@ const avatarHandler = async () => {
   }
 };
 
+//new tweet form post method
 const newFormHandler = async (event) => {
   event.preventDefault();
 
@@ -78,6 +81,7 @@ const newFormHandler = async (event) => {
   }
 };
 
+//delete method for tweet button clicked
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
@@ -95,6 +99,4 @@ const delButtonHandler = async (event) => {
 
 document.getElementById('howlBtn').addEventListener('click', newFormHandler);
 
-document
-  .querySelector('.del-btn')
-  .addEventListener('click', delButtonHandler);
+document.querySelector('.del-btn').addEventListener('click', delButtonHandler);

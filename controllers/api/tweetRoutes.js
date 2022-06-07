@@ -28,7 +28,7 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 router.put('/:id', async (req, res) => {
-  // sending the data to the Model so that one blog can be updated with new data in the database.
+  // sending the data to the Model so that one tweet/howl can be updated with new data in the database.
   try {
     const tweetData = await Tweet.update(
       {
@@ -44,13 +44,14 @@ router.put('/:id', async (req, res) => {
       res.status(404).json({ message: 'No tweet with this id' });
       return;
     }
-    // The updated data (blogData) is then sent back to handler that dispatched the fetch request.
+    // The updated data (tweetData) is then sent back to handler that dispatched the fetch request.
     res.status(200).json(tweetData);
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
+//delete route for user tweet
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const tweetData = await Tweet.destroy({
