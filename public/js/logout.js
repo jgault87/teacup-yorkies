@@ -20,10 +20,10 @@ const catFact = () => {
     })
     .then((post) => {
       //write to populate data into div
-
-      document.getElementById(
-        'catFact'
-      ).innerHTML = `Random cat fact: <br> ${post.data.toString()}`;
+      let catFactEl = document.getElementById('catFact');
+      if (catFactEl) {
+        catFactEl.innerHTML = `Random cat fact: <br> ${post.data.toString()}`;
+      }
     });
 };
 
@@ -35,9 +35,10 @@ const dogPic = () => {
     .then((post) => {
       //write to populate data into div
 
-      document.getElementById(
-        'dogFact'
-      ).innerHTML = `Random dog pic: <img src="${post.url}" class="border border-info rounded-circle" alt="random dog image" width="100%" height="200" >`;
+      let dogFactEl = document.getElementById('dogFact');
+      if (dogFactEl) {
+        dogFactEl.innerHTML = `Random dog pic: <img src="${post.url}" class="border border-info rounded-circle" alt="random dog image" width="100%" height="200" >`;
+      }
     });
 };
 

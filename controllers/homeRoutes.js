@@ -185,8 +185,6 @@ router.get('/PotatoOrPitbull', async (req, res) => {
       potatoOrPitbull.get({ plain: true })
     );
 
-    console.log('HELLO: ', potatoesOrPitbulls);
-
     // Pass serialized data and session flag into template
     res.render('potatoorpitbull', {
       potatoesOrPitbulls: randomlySort(potatoesOrPitbulls),
