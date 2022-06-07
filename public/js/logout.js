@@ -13,6 +13,7 @@ const logout = async () => {
 
 document.querySelector('#logout').addEventListener('click', logout);
 
+//meowfacts API call and display data to innerHTML for a random cat fact
 const catFact = () => {
   fetch('https://meowfacts.herokuapp.com')
     .then((data) => {
@@ -29,6 +30,7 @@ const catFact = () => {
 
 catFact();
 
+//randomDog API call and display picture to innerHTML for random dog image
 const dogPic = () => {
   fetch('https://random.dog/woof.json')
     .then((data) => data.json())

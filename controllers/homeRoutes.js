@@ -4,7 +4,7 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    // Get all blogs and JOIN with user data sorting by DESC ID which will sort newest toward top
+    // Get all tweets/howls and JOIN with user data sorting by DESC ID which will sort newest toward top
     const tweetData = await Tweet.findAll({
       order: [['id', 'DESC']],
       include: [
@@ -42,7 +42,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-//click on individual blog page need to add comment functionality
+//click on individual howl/tweet and comments belonging to tweet 
 router.get('/tweet/:id', async (req, res) => {
   try {
     const tweetData = await Tweet.findByPk(req.params.id, {
@@ -141,6 +141,7 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
+//edit page for user tweet
 router.get('/edit/:id', withAuth, async (req, res) => {
   try {
     const tweetData = await Tweet.findByPk(req.params.id, {
@@ -166,6 +167,7 @@ router.get('/edit/:id', withAuth, async (req, res) => {
   }
 });
 
+// logic for pitbull potato minigame to randomize images presented
 function randomlySort(array) {
   for (var i = array.length - 1; i > 0; i--) {
     var newIndex = Math.floor(Math.random() * (i + 1));
@@ -176,6 +178,7 @@ function randomlySort(array) {
   return array;
 }
 
+//minigame get route
 router.get('/PotatoOrPitbull', async (req, res) => {
   try {
     // Get all blogs and JOIN with user data sorting by DESC ID which will sort newest toward top
@@ -191,6 +194,18 @@ router.get('/PotatoOrPitbull', async (req, res) => {
     // Pass serialized data and session flag into template
     res.render('potatoorpitbull', {
       potatoesOrPitbulls: randomlySort(potatoesOrPitbulls),
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/hangman', async (req, res) => {
+  try {
+    
+    res.render('hangman', {
+      
       logged_in: req.session.logged_in,
     });
   } catch (err) {

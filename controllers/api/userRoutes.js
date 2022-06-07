@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+//populate users from DB
 router.get('/', async (req, res) => {
   try {
     const userData = await User.findAll();
@@ -11,6 +12,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+// choose a random avatar from available avatar array upon signup and create a new user post route used on signup page
 router.post('/', async (req, res) => {
   try {
     let availableAvatars = [
@@ -46,6 +48,7 @@ router.post('/', async (req, res) => {
   }
 });
 
+//login route for existing users
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
@@ -77,6 +80,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
+//logout post route to destroy user session
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
@@ -88,7 +92,7 @@ router.post('/logout', (req, res) => {
 });
 
 router.put('/:id', async (req, res) => {
-  // sending the data to the Model so that one tweet can be updated with new data in the database.
+  // sending the data to the Model so that one tweet can be updated/edited with new avatar data in the database.
   try {
     const userData = await User.update(
       {
