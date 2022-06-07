@@ -201,4 +201,16 @@ router.get('/PotatoOrPitbull', async (req, res) => {
   }
 });
 
+router.get('/hangman', async (req, res) => {
+  try {
+    
+    res.render('hangman', {
+      
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
