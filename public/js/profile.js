@@ -4,7 +4,7 @@ const avatars = [
   'cat3.jpg',
   'cat4.jpg',
   'cat5.jpg',
-  'cat6.jpg',
+  'cat8.jpg',
   'cat7.jpg',
   'dog1.jpg',
   'dog2.jpg',
