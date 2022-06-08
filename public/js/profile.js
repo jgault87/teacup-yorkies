@@ -4,10 +4,6 @@ const avatars = [
   'cat3.jpg',
   'cat4.jpg',
   'cat5.jpg',
-<<<<<<< HEAD
-  'cat8.jpg',
-=======
->>>>>>> 07fa3cedbf0934da086c6e379191d7f9ec2e53c4
   'cat7.jpg',
   'cat8.jpg',
   'cat9.jpg',
