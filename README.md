@@ -54,4 +54,4 @@ Here are our names and contact info. If you have questions, please reach out!
 ![heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
 
 ## Deployed
-Check out the deployed application on [Heroku](https://teacup-yorkies.herokuapp.com/)
+Check out the deployed application on [Heroku](https://howler-forpets.herokuapp.com/about)
