@@ -115,6 +115,11 @@ const delButtonHandler = async (event) => {
   }
 };
 
+
 document.getElementById('howlBtn').addEventListener('click', newFormHandler);
 
-document.getElementById('del-btn').addEventListener('click', delButtonHandler);
+const delbtn = document.querySelectorAll('.del-howl');
+for (let i = 0; i < delbtn.length; i++) {
+  delbtn[i].addEventListener('click', delButtonHandler)
+};
+
