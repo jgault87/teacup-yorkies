@@ -11,7 +11,7 @@ Tweet.init(
       primaryKey: true,
       autoIncrement: true,
     },
-   
+
     content: {
       type: DataTypes.STRING,
     },
@@ -28,6 +28,11 @@ Tweet.init(
         model: 'user',
         key: 'id',
       },
+    },
+    likes: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      defaultValue: 0,
     },
   },
   {

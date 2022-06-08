@@ -9,14 +9,14 @@
                         <div class="row">
                             <div class="col-lg-12 mb-4">
                                 <div class="profile-picture profile-picture-lg bg-gradient bg-primary mb-4">
-                                    <img src="images/{{avatar_file}}" width="144" height="144">
+                                    <img src="images/{{user.avatar_file}}" width="144" height="144">
                                 </div>
                                 <a class="btn btn-primary btn-block btn-gradient waves-effect waves-light" href="#">
                                     <span class="gradient">
-                                <i class="batch-icon batch-icon-user-alt-add-2"></i>
-                              Follow
-                            </span>
-                        </a>
+                                    <i class="batch-icon batch-icon-user-alt-add-2"></i>
+                                    Follow
+                                    </span>
+                                </a>
                             </div>
                             <div class="col-sm-6">
                                 <h5 class="my-0">Followers</h5>
@@ -33,9 +33,9 @@
                         </div>
                         <hr>
                         <h5>
-                      <i class="batch-icon batch-icon-users"></i>
-                      Friends
-                    </h5>
+                            <i class="batch-icon batch-icon-users"></i>
+                            Friends
+                        </h5>
                         <div class="profile-page-block-outer clearfix">
                             <div class="profile-page-block">
                                 <div class="profile-picture bg-gradient bg-primary">
@@ -110,7 +110,7 @@
                         <h1 class="card-user-profile-name"></h1>
                         <div class='row'>
   <div class='col-auto'>
-    <h2>Welcome, {{name}}!</h2>
+    <h2>Welcome, {{user.name}}!</h2>
   </div>
 </div>
 
@@ -122,39 +122,6 @@
         <div class="media-feed-control clearfix"></div>
         <button type="click" class="btn btn-primary btn-sm comment-reply float-right waves-effect waves-light" id="howlBtn">HOWL</button>
 
-
-  {{#if tweets.length}}
-    <div class='col-md-6 project-list'>
-      <h3>Previous Entries:</h3>
-
-      {{#each tweets as |tweet|}}
-        <div class='container mb-2'>
-          <div class="row">
-          <div class="col">
-
-
-          <a href='/tweet/{{tweet.id}}'><h4 class="blog-title">{{tweet.content}}</h4> </a>
-            
-          <div class="d-flex flex-row">
-                  <div class='p-2 edit-button'>
-                        <a href='/edit/{{tweet.id}}'>
-                            <button class='btn btn-sm btn-danger' >Edit</button>
-                        </a>
-                    </div>
-
-          <div class='p-2'>
-            <button 
-              class='btn btn-sm btn-danger'
-              data-id='{{tweet.id}}'
-            >Scoop-It</button>
-          </div>
-          </div>
-          </div>
-        </div>
-        </div>
-      {{/each}}
-    
-  {{/if}}
                                     <a href="#" data-toggle="tooltip" title="" data-original-title="Add Picture">
                                         <i class="batch-icon batch-icon-image"></i>
                                     </a>
@@ -163,106 +130,49 @@
                         </div>
                         <hr>
                         <ul class="list-unstyled mt-5">
-                            <li class="media">
-                                <div class="profile-picture bg-gradient bg-primary mb-4">
-                                    <img src="https://i.ibb.co/7z6zf6z/fur3.jpg" width="44" height="44">
+                         {{#each tweets as |tweet|}}
+                         <li class="media pb-4">
+                            <div class="profile-picture bg-gradient bg-primary mb-4">
+                                <img src="images/{{user.avatar_file}}" width="44" height="44">
+                            </div>
+
+                            
+
+                            <div class="media-body">
+                                <div class="media-title mt-0 mb-1">
+                                    <a href="#">{{tweet.user.name}}</a> <small>{{format_date tweet.date_created}}</small>
                                 </div>
-                                <div class="media-body">
-                                    <div class="media-title mt-0 mb-1">
-                                        <a href="#">Ann de la Fur</a> <small> 1 hour ago</small>
-                                    </div>
-                                    My first furry convention was purr-fect!
-                                    <div class="media-feed-control">
-                                        <a href="#">
-                                            <i class="batch-icon batch-icon-heart-full"></i>🐾 Like (4)
-                                        </a>
-                                        <a href="#">
-                                            <i class="batch-icon batch-icon-speech-bubble-left-tip"></i>💬 Comment (2)
-                                        </a>
-                                        <a href="#">
-                                            <i class="batch-icon batch-icon-flag"></i>💩 Report
-                                        </a>
-                                    </div>
-                                    <div class="media-body-reply-block">
-                                        <ul class="list-unstyled">
-                                            <li class="media mt-4">
-                                                <div class="profile-picture bg-gradient bg-primary mb-4">
-                                                    <img src="https://i.ibb.co/Z2fNk6Q/profile7.jpg" width="44" height="44">
-                                                </div>
-                                                <div class="media-body">
-                                                    <div class="media-title mt-0 mb-1">
-                                                        <a href="#">Cuddles</a> <small> 45 mins ago</small>
-                                                    </div>
-                                                    I went to the store with ears and tail today. So many stares. Still too scared to dress up all the way. Please advise.
-                                                    <div class="media-feed-control">
-                                                        <a href="#">
-                                                            <i class="batch-icon batch-icon-heart-full"></i>🐾 Like
-                                                        </a>
-                                                        <a href="#">
-                                                            <i class="batch-icon batch-icon-speech-bubble-left-tip"></i>💬 Comment
-                                                        </a>
-                                                        <a href="#">
-                                                            <i class="batch-icon batch-icon-flag"></i>💩 Report
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="media mt-4">
-                                                <div class="profile-picture bg-gradient bg-primary mb-4">
-                                                    <img src="https://i.ibb.co/RYf3RgK/profile5.jpg" width="44" height="44">
-                                                </div>
-                                                <div class="media-body">
-                                                    <div class="media-title mt-0 mb-1">
-                                                        <a href="#">Jayne Bear</a> <small> 7 mins ago</small>
-                                                    </div>
-                                                  I love cats.
-                                                    <div class="media-feed-control">
-                                                        <a href="#">
-                                                            <i class="batch-icon batch-icon-heart-full"></i>🐾 Like
-                                                        </a>
-                                                        <a href="#">
-                                                            <i class="batch-icon batch-icon-speech-bubble-left-tip"></i>💬 Comment
-                                                        </a>
-                                                        <a href="#">
-                                                            <i class="batch-icon batch-icon-flag"></i>💩 Report
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="comment-reply-block mt-4">
-                                                <div class="form-group clearfix">
-                                                    {{!-- <textarea class="form-control comment-reply-textarea" rows="2" placeholder="Enter your comment here..."></textarea>
-                                                    <button type="button" class="btn btn-secondary btn-sm comment-reply float-right waves-effect waves-light">Reply</button> --}}
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="media">
-                                <div class="profile-picture bg-gradient bg-primary mb-4">
-                                    <img src="https://i.ibb.co/NrCdny6/profile2.jpg" width="44" height="44">
-                                </div>
-                                <div class="media-body">
-                                    <div class="media-title mt-0 mb-1">
-                                        <a href="#">Delightful Delia</a> <small> 1 hour ago</small>
-                                    </div>
-                                    <a href="#">
-                                        <img src="https://i.ibb.co/mvRJT8k/fur2.jpg" class="img-fluid img-thumbnail">
+                                {{tweet.content}}
+                                <div class="media-feed-control">
+                                    <button style="color: #000000;" class="like btn btn-link" id={{tweet.id}}-{{tweet.likes}}>
+                                        <i class="batch-icon batch-icon-heart-full"></i>🐾 Like ({{tweet.likes}})
+                                    </button>
+                                    <a style="color: #000000;" href="/tweet/{{tweet.id}}">
+                                        <i  class="batch-icon batch-icon-speech-bubble-left-tip"></i>💬 Comment ({{tweet.comments.length}})
                                     </a>
-                                    <div class="media-feed-control">
-                                        <a href="#">
-                                            <i class="batch-icon batch-icon-heart-full"></i>🐾 Like (57)
-                                        </a>
-                                        <a href="#">
-                                            <i class="batch-icon batch-icon-speech-bubble-left-tip"></i>💬 Comment
-                                        </a>
-                                        <a href="#">
-                                            <i class="batch-icon batch-icon-flag"></i>💩 Report
-                                        </a>
-                                    </div>
+                                    <a style="color: #000000;" href="#">
+                                        <i class="batch-icon batch-icon-flag"></i>💩 Report
+                                    </a>
                                 </div>
-                            </li>
+                            </div>
+                            {{#if tweet.currentUsersTweet}}
+                                <div class="d-flex flex-row justify-content-end">
+                                <div class='p-2 edit-button'>
+                                    <a href='/edit/{{tweet.id}}'>
+                                        <button class='btn btn-sm btn-danger' >Edit</button>
+                                    </a>
+                                </div>
+
+                                <div class='p-2'>
+                                    <button 
+                                    class='btn del-btn btn-sm btn-danger'
+                                    data-id='{{tweet.id}}'
+                                    >Scoop-It</button>
+                                </div>
+                            </div>
+                            {{/if}}
+                        </li>
+                        {{/each}}
                         </ul>
                     </div>
                 </div>
@@ -279,4 +189,6 @@
 
 
 
+
+<script src='/js/likes.js'></script>
 <script src='/js/profile.js'></script>

@@ -1,11 +1,12 @@
 const newCommentHandler = async (event) => {
   event.preventDefault();
 
-
   if (event.target.hasAttribute('data-id')) {
     const tweet_id = event.target.getAttribute('data-id');
-    const comment_text = document.querySelector('#comment-content').value.trim();
-    console.log(comment_text, tweet_id);
+    const comment_text = document
+      .querySelector('#comment-content')
+      .value.trim();
+    console.log('COMMENT', comment_text, tweet_id);
 
     if (tweet_id && comment_text) {
       const response = await fetch(`/api/comments`, {
@@ -25,9 +26,6 @@ const newCommentHandler = async (event) => {
   }
 };
 
-document.querySelector('.submit-button').addEventListener('click', newCommentHandler);
-
-
-
-
-
+document
+  .querySelector('.submit-button')
+  .addEventListener('click', newCommentHandler);

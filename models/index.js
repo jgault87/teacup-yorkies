@@ -1,6 +1,7 @@
 const User = require('./User');
 const Tweet = require('./Tweet');
 const Comment = require('./Comment');
+const PotatoOrPitbull = require('./PotatoOrPitbull');
 
 User.hasMany(Tweet, {
   foreignKey: 'user_id',
@@ -9,7 +10,6 @@ User.hasMany(Tweet, {
 
 Tweet.belongsTo(User, {
   foreignKey: 'user_id',
-  
 });
 
 Comment.belongsTo(User, {
@@ -18,7 +18,6 @@ Comment.belongsTo(User, {
 
 Comment.belongsTo(Tweet, {
   foreignKey: 'tweet_id',
-  
 });
 
 User.hasMany(Comment, {
@@ -27,7 +26,6 @@ User.hasMany(Comment, {
 
 Tweet.hasMany(Comment, {
   foreignKey: 'tweet_id',
- 
 });
 
-module.exports = { User, Tweet, Comment };
+module.exports = { User, Tweet, Comment, PotatoOrPitbull };

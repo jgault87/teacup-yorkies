@@ -4,8 +4,14 @@ const avatars = [
   'cat3.jpg',
   'cat4.jpg',
   'cat5.jpg',
+<<<<<<< HEAD
   'cat8.jpg',
+=======
+>>>>>>> 07fa3cedbf0934da086c6e379191d7f9ec2e53c4
   'cat7.jpg',
+  'cat8.jpg',
+  'cat9.jpg',
+  'cat10.jpg',
   'dog1.jpg',
   'dog2.jpg',
   'dog3.jpg',
@@ -14,6 +20,7 @@ const avatars = [
   'dog6.jpg',
 ];
 
+//loop through images array and add styling via bootstrap classes then add each image onto page with a click event that passes to avatarHandler
 avatars.forEach((src) => {
   const img = document.createElement('img');
   img.classList.add('rounded-circle');
@@ -30,13 +37,13 @@ avatars.forEach((src) => {
   });
 });
 
+//put request to pass clicked image value to logged in user class on the back end.
 const avatarHandler = async () => {
   if (event.target.hasAttribute('id')) {
     const avatar_file = event.target.getAttribute('id');
     console.log(avatar_file);
 
     if (avatar_file) {
-      
       const response = await fetch(`/api/users/:id`, {
         method: 'PUT',
         body: JSON.stringify({ avatar_file }),
@@ -48,13 +55,14 @@ const avatarHandler = async () => {
       if (response.ok) {
         window.alert('Avatar updated successfully!');
         document.location.replace('/dashboard');
-    } else {
+      } else {
         alert('Failed to update post');
-    }
+      }
     }
   }
 };
 
+//new tweet form post method
 const newFormHandler = async (event) => {
   event.preventDefault();
 
@@ -77,6 +85,7 @@ const newFormHandler = async (event) => {
   }
 };
 
+//delete method for tweet button clicked
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
@@ -87,15 +96,11 @@ const delButtonHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/dashboard');
     } else {
-      alert('Failed to delete project');
+      alert('Failed to delete howl');
     }
   }
 };
 
 document.getElementById('howlBtn').addEventListener('click', newFormHandler);
 
-document
-  .querySelector('.project-list')
-  .addEventListener('click', delButtonHandler);
-
-
+document.querySelector('.del-btn').addEventListener('click', delButtonHandler);

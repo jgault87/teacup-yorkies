@@ -1,10 +1,10 @@
 const sequelize = require('../config/connection');
-const { User, Tweet, Comment } = require('../models');
+const { User, Tweet, Comment, PotatoOrPitbull } = require('../models');
 
 const userData = require('./userData.json');
 const tweetData = require('./tweetData.json');
 const commentData = require('./commentData.json');
-// const pitbullOrPotatoData = require('./pitpullOrPotatoData.json');
+const pitbullOrPotatoData = require('./potatoOrPitbullData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -18,6 +18,7 @@ const seedDatabase = async () => {
     await Tweet.create({
       ...tweet,
       user_id: users[Math.floor(Math.random() * users.length)].id,
+      likes: Math.floor(Math.random() * 250),
     });
   }
 
@@ -25,6 +26,12 @@ const seedDatabase = async () => {
     await Comment.create({
       ...comment,
       user_id: users[Math.floor(Math.random() * users.length)].id,
+    });
+  }
+
+  for (const pitbullOrPotato of pitbullOrPotatoData) {
+    await PotatoOrPitbull.create({
+      ...pitbullOrPotato,
     });
   }
 
