@@ -49,8 +49,7 @@ const avatarHandler = async () => {
       });
 
       if (response.ok) {
-        window.alert('Avatar updated successfully!');
-        document.location.replace('/dashboard');
+        document.getElementById('modalbtn').click();
       } else {
         alert('Failed to update post');
       }

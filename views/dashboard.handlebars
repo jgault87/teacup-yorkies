@@ -187,7 +187,30 @@
 <div class=".justify-content-center deck rounded-circle border" id="card-deck">
 </div>
 
+<button id='modalbtn' type="button" class="d-none btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
 
+</button>
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Avatar Selection</h5>
+        <button type="button" class="close" onclick="location.reload();" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        You have successfully changed your avatar!
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="location.reload();" data-dismiss="modal">Close</button> 
+
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <script src='/js/likes.js'></script>
