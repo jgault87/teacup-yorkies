@@ -30,7 +30,8 @@ You will also need to configure your environment variables as this application u
 To contribute to this project please contact us, information is below.
 
 ## Tests
-N/A
+try signing into the application as test user:
+email: japan@gmail.com or murphy@gmail.com password: password12345
 
 ## Questions
 Here are our names and contact info. If you have questions, please reach out!
