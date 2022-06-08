@@ -33,6 +33,25 @@ avatars.forEach((src) => {
   });
 });
 
+// logic adding avatars to modal selection instead of bottom page
+
+
+// avatars.forEach((src) => {
+//   const img = document.createElement('img');
+//   img.classList.add('rounded-circle');
+//   img.classList.add('border');
+//   img.classList.add('border-info');
+//   img.src = `images/${src}`;
+//   img.title = src;
+//   img.width = 150;
+//   img.height = 150;
+//   img.id = src;
+//   window['modal-avatar'].appendChild(img);
+//   img.addEventListener('click', () => {
+//     avatarHandler();
+//   });
+// });
+
 //put request to pass clicked image value to logged in user class on the back end.
 const avatarHandler = async () => {
   if (event.target.hasAttribute('id')) {
