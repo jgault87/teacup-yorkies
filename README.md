@@ -24,7 +24,7 @@ You will need to clone or fork this application for installation and install the
 You will also need to configure your environment variables as this application uses the dotenv package.
 
 ## Usage
-
+![demo](demo.gif)
 
 ## Contributing
 To contribute to this project please contact us, information is below.

@@ -164,8 +164,8 @@
                                 </div>
 
                                 <div class='p-2'>
-                                    <button 
-                                    class='btn del-btn btn-sm btn-danger'
+                                    <button id="del-btn"
+                                    class='btn btn-sm btn-danger'
                                     data-id='{{tweet.id}}'
                                     >Scoop-It</button>
                                 </div>
@@ -187,10 +187,11 @@
 <div class=".justify-content-center deck rounded-circle border" id="card-deck">
 </div>
 
+{{!-- hidden modal button --}}
 <button id='modalbtn' type="button" class="d-none btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-
 </button>
 
+{{!-- modal logic --}}
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">

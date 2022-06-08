@@ -98,4 +98,4 @@ const delButtonHandler = async (event) => {
 
 document.getElementById('howlBtn').addEventListener('click', newFormHandler);
 
-document.querySelector('.del-btn').addEventListener('click', delButtonHandler);
+document.getElementById('del-btn').addEventListener('click', delButtonHandler);
