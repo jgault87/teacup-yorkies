@@ -17,25 +17,6 @@ const avatars = [
 ];
 
 //loop through images array and add styling via bootstrap classes then add each image onto page with a click event that passes to avatarHandler
-avatars.forEach((src) => {
-  const img = document.createElement('img');
-  img.classList.add('rounded-circle');
-  img.classList.add('border');
-  img.classList.add('border-info');
-  img.src = `images/${src}`;
-  img.title = src;
-  img.width = 150;
-  img.height = 150;
-  img.id = src;
-  window['card-deck'].appendChild(img);
-  img.addEventListener('click', () => {
-    avatarHandler();
-  });
-});
-
-// logic adding avatars to modal selection instead of bottom page
-
-
 // avatars.forEach((src) => {
 //   const img = document.createElement('img');
 //   img.classList.add('rounded-circle');
@@ -46,11 +27,31 @@ avatars.forEach((src) => {
 //   img.width = 150;
 //   img.height = 150;
 //   img.id = src;
-//   window['modal-avatar'].appendChild(img);
+//   window['card-deck'].appendChild(img);
 //   img.addEventListener('click', () => {
 //     avatarHandler();
 //   });
 // });
+
+// logic adding avatars to modal selection instead of bottom page
+
+
+
+avatars.forEach((src) => {
+  const img = document.createElement('img');
+  img.classList.add('rounded-circle');
+  img.classList.add('border');
+  img.classList.add('border-info');
+  img.src = `images/${src}`;
+  img.title = src;
+  img.width = 150;
+  img.height = 150;
+  img.id = src;
+  window['modal-avatar'].appendChild(img);
+  img.addEventListener('click', () => {
+    avatarHandler();
+  });
+});
 
 //put request to pass clicked image value to logged in user class on the back end.
 const avatarHandler = async () => {
@@ -68,7 +69,8 @@ const avatarHandler = async () => {
       });
 
       if (response.ok) {
-        document.getElementById('modalbtn').click();
+        document.location.replace('/dashboard');
+        
       } else {
         alert('Failed to update post');
       }
@@ -123,3 +125,8 @@ for (let i = 0; i < delbtn.length; i++) {
   delbtn[i].addEventListener('click', delButtonHandler)
 };
 
+
+document.getElementById('change-avatar').addEventListener('click', () => {
+document.getElementById('modalbtn').click();
+
+});
