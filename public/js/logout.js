@@ -39,7 +39,7 @@ const dogPic = () => {
 
       let dogFactEl = document.getElementById('dogFact');
       if (dogFactEl) {
-        dogFactEl.innerHTML = `Random dog pic: <a href="${post.url}"> <img src="${post.url}" class="border border-info rounded-circle" alt="Click to watch video" width="100%" height="200"></a>`;
+        dogFactEl.innerHTML = `Random dog pic: <a href="${post.url}"> <img src="${post.url}" class="img-thumbnail" alt="Click to watch video" ></a>`;
       }
     });
 };
